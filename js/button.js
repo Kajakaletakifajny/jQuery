@@ -1,5 +1,5 @@
 function kot() {
-    $('ul').append('C++');
+    $('ul').append('<li>C++</li>');
 };
 
 /*function kot()
