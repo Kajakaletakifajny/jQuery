@@ -28,3 +28,16 @@ li{
 img{
     width: 300px;
 }
+
+.link{
+    color: grey;
+    text-decoration: none;
+}
+
+.inny_link{
+    backdrop-color: black;
+}
+
+.jeszcze_inny_link{
+    background-color: yellow;
+}
