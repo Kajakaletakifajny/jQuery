@@ -41,3 +41,39 @@ img{
 .jeszcze_inny_link{
     background-color: yellow;
 }
+
+#span{
+    display: none;
+}
+#span1{
+    display: none;
+}
+#span2{
+    display: none;
+}
+span{
+    font-size: 22px;
+}
+#container{
+    width: 700px;
+    margin: 0 auto;
+}
+
+#container2{
+    width: 700px;
+    margin: 0 auto;
+}
+
+#zew{
+    width: 80%;
+    height: 200px;
+    margin: 0 auto;
+    background-color: #ccccff;
+}
+
+#wew{
+    width: 60%;
+    height: 100px;
+    background-color: blue;
+    margin: 30px auto;
+}
