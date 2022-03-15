@@ -1,8 +1,11 @@
+//zdarzenia pola
 $(function (){
     $('input').on('focus',function (){$('#span').css('display','inline').fadeOut(4500);});
     $('input').on('blur',function (){$('#span1').css('display','inline').fadeOut(4500);});
     $('input').on('change   ',function (){$('#span2').css('display','inline').fadeOut(4500);});
 });
+
+//zdarzenia myszy
 $(function (){
     let i =0;
     let n=0;
@@ -16,4 +19,27 @@ $(function (){
         n += 1;
         $('#komm').text('Kliknieto prostokat '+n+' Razy');
     });
+});
+
+//zdarzenia klawiatury
+$(function(){
+    $('input').on('keydown', function(){
+        $('input').css({
+            'background-color': 'black',
+            'color': 'white'
+        });
+    });
+
+    $('input').on('keyup', function(){
+        $('input').css({
+            'background-color': 'white',
+            'color': 'black'
+        });
+    });
+
+    let i=0;
+    $('input').keypress(function(){
+        $('span').eq(3).text(i+=1);
+    });
+
 });
