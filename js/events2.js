@@ -21,7 +21,7 @@ $(function(){
         $('p').last().text(event.target.nodeName);
     });
 
-    $('#pokaz').on('click', function(){
+    $('#pokaz2').on('click', function(){
         $('img').show();
     });
     $('#ukryj').on('click', function(){
