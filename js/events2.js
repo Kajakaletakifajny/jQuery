@@ -16,4 +16,19 @@ $(function(){
     $('input, h2').on('click', function(){
         $('span').eq(9).text(event.target.nodeName);
     });
+
+    $('input, h2, h1, button,p ,span').on('click', function(){
+        $('p').last().text(event.target.nodeName);
+    });
+
+    $('#pokaz').on('click', function(){
+        $('img').show();
+    });
+    $('#ukryj').on('click', function(){
+        $('img').hide();
+    });
+    $('#przelacz').on('click', function(){
+        $('img').toggle;
+    });
+
 });
