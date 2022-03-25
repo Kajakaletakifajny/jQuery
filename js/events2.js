@@ -51,7 +51,7 @@ $(function (){
     $('#start1').on('click', function (){
         $('#pierwszy2').animate({'left': '+=300px'}, 'slow');
         $('#pierwszy2').animate({'top': '+=50px'}, 'slow');
-        $('#pierwszy2').animate({'left': '+=700px'}, 600);
+        $('#pierwszy2').animate({'left': '+=700px'}, 600, 'swing', $('#log').text('Niebieski wygra'));
     });
 
     $('#start2').on('click', function (){
@@ -74,3 +74,23 @@ $(function (){
         $('.kulka').stop();
     });
 });
+
+/*
+$(function (){
+    $('#wgore').on('click', function (){
+        $('#trzeci2').animate({'bottom': '+=50px'});
+    });
+
+    $('#wdol').on('click', function (){
+        $('#trzeci2').animate({'top': '+=50px'});
+    });
+
+    $('#wprawo').on('click', function (){
+        $('#trzeci2').animate({'left': '+=50px'});
+    });
+
+    $('#wlewo').on('click', function (){
+        $('#trzeci2').animate({'right': '+=50px'});
+    });
+
+});*/
