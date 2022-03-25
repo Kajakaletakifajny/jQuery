@@ -51,7 +51,7 @@ $(function (){
     $('#start1').on('click', function (){
         $('#pierwszy2').animate({'left': '+=300px'}, 'slow');
         $('#pierwszy2').animate({'top': '+=50px'}, 'slow');
-        $('#pierwszy2').animate({'left': '+=700px'}, 600, 'swing', $('#log').text('Niebieski wygra'));
+        $('#pierwszy2').animate({'left': '+=700px'}, 600, 'swing', function(){$('#log').text('Niebieski wygra')});
     });
 
     $('#start2').on('click', function (){
@@ -94,3 +94,58 @@ $(function (){
     });
 
 });*/
+
+
+$(function(){
+    $('input').on('keyup', function(){
+        const wartosc=$(this).val();
+        $('p').eq(0).text(wartosc);
+    }).keyup();
+
+    function wyswietlPojedynczyWybor(){
+        const pojedynczyWybor=$('#tylkoJeden').val();
+        $('p').eq(1).text('Twój wybór to: ' + pojedynczyWybor);
+    }
+
+    $('select').change(wyswietlPojedynczyWybor);
+    wyswietlPojedynczyWybor();
+
+    function wyborJezyka() {
+        const jakiJezyk = $('#tylkoJeden').val();
+        if (jakiJezyk == 'Stron internetowych'){
+            $('#log').text('');
+            $('#ulubionyJezyk').html('PHP <input type="radio" name="www" value="PHP"> Java Script <input type="radio" name="www" value="JavaScript">');
+            $('input').on('click', function (){
+                $('#log').html('wybrano' + $('input:checked').val());
+            });
+        }
+        else if (jakiJezyk=='Aplikacji desktopowych'){
+            $('#log').text('');
+            $('#ulubionyJezyk').html('C++ <input type="checkbox" name ="desktop"  value="C++"> Java <input type="checkbox" name="desktop" value="Java"> <button type="button"> Sprawdz zaznaczenie</button>');
+            $('button').on('click', function (){
+                const favorite = [];
+                $.each($('input[name="desktop"]:checked'), function (){
+                    favorite.push($(this).val());
+                });
+                const ilosc = function (){
+                    const n = $('input:checked').length;
+                    const x = (n === 1 ? 'Moim ulubionym jezykiem jest:' : 'Moimi ulubionymi jezykami są: ');
+                    alert(x + favorite.join(', '));
+                };
+                ilosc();
+            });
+        };
+        else {
+            $('#log').text('');
+            $('#ulubionyJezyk').html('<img src="best5.png">');
+        };
+    };
+    $('select').change(wyborJezyka());
+    wyborJezyka();
+    function wyswietlWyborWielokrotny () {
+        const wielokrotnyWybor = $('#wiele').val();
+        $('p').eq(6).text('Twoj wybor to : '+ wielokrotnyWybor.join(', '));
+    }
+    $('select').change(wyswietlWyborWielokrotny);
+    wyswietlWyborWielokrotny();
+});
